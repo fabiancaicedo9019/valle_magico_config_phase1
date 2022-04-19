@@ -70,7 +70,7 @@ echo ""
 
 # Run docker-compose-update.sh
 echo "Run docker-compose-update.sh"
-. "$folder"docker-compose-update.sh"
+. "$folder"docker-compose-update.sh
 
 echo "End process configuration"
 echo "---------------------------"
