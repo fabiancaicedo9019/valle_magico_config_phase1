@@ -55,8 +55,8 @@ GRANT ALL PRIVILEGES ON talentumehs_valle_open_location.* TO 'valle-user'@'%' ID
 FLUSH PRIVILEGES;
 Exit;
 echo "Loading model database talentumehs_valle_magico"
-mysql -u root -ps1r1yd1n32l talentumehs_valle_magico < docker/db/talentumehs_valle_magico.sql
-mysql -u root -ps1r1yd1n32l talentumehs_valle_open_location < docker/db/talentumehs_valle_open_location.sql
+mysql -u root -ps1r1yd1n32l talentumehs_valle_magico < db/talentumehs_valle_magico.sql
+mysql -u root -ps1r1yd1n32l talentumehs_valle_open_location < db/talentumehs_valle_open_location.sql
 echo ""
 
 # Download updater Valle Magico
