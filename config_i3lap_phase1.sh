@@ -8,9 +8,14 @@ echo "Install tree command line"
 sudo apt-get install tree
 echo ""
 
+# Install curl
+echo "Install curl"
+sudo apt-get install curl -y
+echo ""
+
 # Install docker
 echo "Install docker"
-sudo apt install docker.io
+sudo apt install docker.io -y
 docker --version
 echo ""
 
@@ -22,9 +27,9 @@ docker-compose --version
 echo ""
 
 # Install jq
-echo "Install docker-compose"
+echo "Install jq"
 sudo apt-get update
-sudo apt-get install jq
+sudo apt-get install jq -y
 echo '{"print":{"valle-magico":"success","status":"ok","test":"jq package"}}' | jq '.'
 echo ""
 
