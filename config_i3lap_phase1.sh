@@ -46,21 +46,11 @@ echo ""
 
 # Configure MySQL
 echo "Configure MySQL"
-echo "Login root MySQL"
-mysql -u root -ps1r1yd1n32l
-# Create user: valle-user
-CREATE USER 'valle-user'@'%' IDENTIFIED BY 'Inclusionvalle2022*';
-# Create database: talentumehs_valle_magico
-CREATE DATABASE talentumehs_valle_magico;
-GRANT ALL PRIVILEGES ON talentumehs_valle_magico.* TO 'valle-user'@'%' IDENTIFIED BY 'Inclusionvalle2022*';
-FLUSH PRIVILEGES;
-# Create database: talentumehs_valle_magico
-CREATE DATABASE talentumehs_valle_open_location;
-GRANT ALL PRIVILEGES ON talentumehs_valle_open_location.* TO 'valle-user'@'%' IDENTIFIED BY 'Inclusionvalle2022*';
-FLUSH PRIVILEGES;
-Exit;
+echo "Execute configuration script in MySQL"
+mysql -u root -ps1r1yd1n32l -e "source config_mysql.sql"
 echo "Loading model database talentumehs_valle_magico"
 mysql -u root -ps1r1yd1n32l talentumehs_valle_magico < db/talentumehs_valle_magico.sql
+echo "Loading model database talentumehs_valle_open_location"
 mysql -u root -ps1r1yd1n32l talentumehs_valle_open_location < db/talentumehs_valle_open_location.sql
 echo ""
 
@@ -72,6 +62,7 @@ if [ -d $folder ]; then
 else
     mkdir $folder
 fi
+pwd
 curl -o "$folder"docker-compose-update.sh https://raw.githubusercontent.com/jefedesarrollo/updater-nexum/main/docker-compose-update.sh
 echo ""
 
