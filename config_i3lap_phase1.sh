@@ -39,8 +39,11 @@ echo ""
 
 # Configure ports
 echo "Configure ports"
+echo "Allow port 8070"
 sudo ufw allow 8070
+echo "Allow port 9091"
 sudo ufw allow 9091
+echo "Allow port 9092"
 sudo ufw allow 9092
 echo ""
 
@@ -62,9 +65,12 @@ if [ -d $folder ]; then
 else
     mkdir $folder
 fi
-pwd
 curl -o "$folder"docker-compose-update.sh https://raw.githubusercontent.com/jefedesarrollo/updater-nexum/main/docker-compose-update.sh
 echo ""
+
+# Run docker-compose-update.sh
+echo "Run docker-compose-update.sh"
+. "$folder"docker-compose-update.sh"
 
 echo "End process configuration"
 echo "---------------------------"
